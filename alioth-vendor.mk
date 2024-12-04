@@ -195,6 +195,7 @@ PRODUCT_PACKAGES += \
     libfcsam \
     audio.primary.kona \
     liba2dpoffload \
+    libacdbloader \
     libaudio_log_utils \
     libaudiocloudctrl \
     libaudioroute_ext \
