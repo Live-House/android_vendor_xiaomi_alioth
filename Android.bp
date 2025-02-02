@@ -4420,10 +4420,10 @@ android_app_import {
 	name: "HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND",
 	owner: "xiaomi",
 	apk: "proprietary/product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk",
-	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
 	},
+	certificate: "platform",
 	privileged: true,
 	product_specific: true,
 }
@@ -4432,10 +4432,10 @@ android_app_import {
 	name: "HotwordEnrollmentXGoogleHEXAGON_WIDEBAND",
 	owner: "xiaomi",
 	apk: "proprietary/product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk",
-	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
 	},
+	certificate: "platform",
 	privileged: true,
 	product_specific: true,
 }
@@ -4512,6 +4512,23 @@ sh_binary {
 	owner: "xiaomi",
 	src: "proprietary/vendor/bin/init.qti.chg_policy.sh",
 	filename: "init.qti.chg_policy.sh",
+	soc_specific: true,
+}
+
+cc_prebuilt_binary {
+	name: "nv_mac",
+	owner: "xiaomi",
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/bin/nv_mac"],
+			shared_libs: ["libcutils", "liblog", "libqmi_cci", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	strip: {
+		none: true,
+	},
+	prefer: true,
 	soc_specific: true,
 }
 
